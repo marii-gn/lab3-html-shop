@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Зворотній зв'язок — TrendWear</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/feedback.css">
+<style>
+input:required { border-left: 3px solid darkgreen; }
+textarea { resize: vertical; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <img class="logo" src="images/logo.png" alt="Логотип TrendWear" width="120" height="60">
+  <h1 class="site-title">Зворотній зв'язок</h1>
+</header>
+
+<main class="content">
+
+  <form class="feedback-form" action="#">
+
+    <fieldset class="personal">
+      <legend>Персональна інформація</legend>
+
+      <p class="field">
+        <label for="fullname">Прізвище та ім'я:</label><br>
+        <input type="text" id="fullname" name="fullname" required>
+      </p>
+
+      <p class="field">
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" required>
+      </p>
+
+      <p class="field">
+        <label for="age">Вік:</label><br>
+        <input type="number" id="age" name="age" min="1" max="120">
+      </p>
+
+      <p class="field">
+        <label for="education">Освіта:</label><br>
+        <select id="education" name="education">
+          <option value="full" selected>Повна</option>
+          <option value="incomplete">Неповна</option>
+          <option value="higher">Вища</option>
+          <option value="professional">Професійна</option>
+        </select>
+      </p>
+    </fieldset>
+
+    <p class="field-purpose">
+      <label for="purpose">Мета зворотного зв'язку:</label><br>
+      <select id="purpose" name="purpose">
+        <option value="cooperation">Співпраця</option>
+        <option value="complaint">Скарга на порушення права власності</option>
+        <option value="proposal">Пропозиція</option>
+        <option value="bug">Наявність помилки</option>
+      </select>
+    </p>
+
+    <p class="field-details">
+      <label for="details">Детально:</label><br>
+      <textarea id="details" name="details" rows="6" cols="40" maxlength="500"></textarea>
+    </p>
+
+    <p class="field-agree">
+      <input type="checkbox" id="agreement" name="agreement" required>
+      <label for="agreement">Я даю згоду на обробку персональних даних</label>
+    </p>
+
+    <p class="field-actions">
+      <button type="submit" class="btn">Надіслати</button>
+      <button type="reset" class="btn">Скасувати</button>
+    </p>
+
+  </form>
+</main>
+
+<footer class="site-footer">
+  <p><a href="index.html">На головну сторінку</a></p>
+</footer>
+
+<script src="js/feedback.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 2px solid darkgreen;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  gap: 25px;
+  justify-items: stretch;
+  align-items: start;
+}
+
+.product-card {
+  padding: 15px;
+  background-color: white;
+  border: 1px solid darkgreen;
+  border-top: 3px dotted darkgreen;
+  box-shadow: inset 0 0 12px rgba(0, 100, 0, 0.35);
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 5px 20px;
+}
+
+.product-card:first-child,
+.product-card:last-child {
+  grid-column: span 2;
+}
+
+.product-title {
+  grid-column: 1 / -1;
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.product-photo {
+  grid-column: 1;
+  grid-row: 2 / span 2;
+  align-self: start;
+  border-radius: 6px;
+}
+
+.origin {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.specs {
+  grid-column: 2;
+  grid-row: 3;
+  margin-left: 20px;
+}
+
+.origin,
+.specs li {
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+.product-photo:hover {
+  animation-name: vintage;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes vintage {
+  from { filter: sepia(0) contrast(1) brightness(1); }
+  to   { filter: sepia(1) contrast(1.15) brightness(0.9); }
+}
+
+@media (max-width: 800px) {
+  .catalog {
+    grid-template-columns: 1fr;
+  }
+  .product-card:first-child,
+  .product-card:last-child {
+    grid-column: auto;
+  }
+}

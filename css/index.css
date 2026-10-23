@@ -1,0 +1,250 @@
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 2px solid darkgreen;
+  z-index: 100;
+}
+
+.site-header .logo {
+  float: left;
+  margin-right: 15px;
+}
+
+.site-title {
+  float: left;
+  line-height: 60px;
+}
+
+.main-nav {
+  clear: both;
+  float: left;
+}
+
+.main-nav ul {
+  list-style: none;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.main-nav li:last-child {
+  margin-right: 0;
+}
+
+.main-nav a[href$=".html"] {
+  font-weight: bold;
+}
+
+.site-header > .btn {
+  float: right;
+  margin-left: 10px;
+}
+
+.content {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#about {
+  margin: 40px 0;
+  padding: 15px;
+  background-color: white;
+  border: 1px solid #cccccc;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#about h2 {
+  position: sticky;
+  top: 0;
+  padding: 5px 0;
+  background-color: white;
+}
+
+#about h2 + p {
+  font-size: 1.05rem;
+}
+
+#about p:first-of-type::before {
+  content: "😊 ";
+}
+
+#about ol {
+  margin-left: 25px;
+}
+
+#about li {
+  margin-bottom: 5px;
+}
+
+#about li::marker {
+  color: darkgreen;
+  font-weight: bold;
+}
+
+#about::-webkit-scrollbar {
+  width: 10px;
+}
+
+#about::-webkit-scrollbar-track {
+  background-color: #eeeeee;
+  border-radius: 5px;
+}
+
+#about::-webkit-scrollbar-thumb {
+  background-color: darkgreen;
+  border-radius: 5px;
+}
+
+#about::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(150, 60%, 15%);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  #about {
+    scrollbar-width: thin;
+    scrollbar-color: darkgreen #eeeeee;
+  }
+}
+
+#product-info {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease;
+}
+
+#product-info:hover {
+  transform: translateY(-2%);
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.info-table caption {
+  caption-side: bottom;
+  padding: 8px;
+  font-style: italic;
+  color: gray;
+}
+
+.info-table th,
+.info-table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #cccccc;
+}
+
+.info-table thead th {
+  background-color: hsl(150, 40%, 90%);
+}
+
+.info-table tbody tr:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
+.info-table tfoot th {
+  text-align: right;
+}
+
+.content > .featured {
+  margin-bottom: 40px;
+  padding: 15px;
+  background-color: white;
+  border-left: 4px solid darkgreen;
+}
+
+.featured-photo {
+  float: right;
+  margin-left: 15px;
+  border-radius: 6px;
+}
+
+.featured::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#reviews {
+  margin-bottom: 40px;
+}
+
+#reviews h2 ~ .review {
+  padding-left: 12px;
+  border-left: 3px solid hsl(150, 40%, 70%);
+}
+
+.review::first-letter {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.popular {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 190px;
+  padding: 12px;
+  background-color: white;
+  border: 2px solid darkgreen;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+}
+
+.popular h2 {
+  font-size: 1rem;
+}
+
+.popular ul {
+  margin-left: 18px;
+  font-size: 0.9rem;
+}
+
+.contacts {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  font-style: normal;
+  text-align: left;
+  color: hsl(30, 20%, 35%);
+  background-color: hsl(40, 40%, 92%);
+  border-radius: 6px;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+.contacts::selection {
+  color: hsl(30, 20%, 25%);
+  background-color: hsl(40, 40%, 82%);
+}
+
+.contacts:active {
+  color: hsl(30, 20%, 25%);
+  background-color: hsl(40, 40%, 82%);
+  transition: color 0.5s ease 2s, background-color 0.5s ease 2s;
+}
+
+.social a[target="_blank"]::after {
+  content: " ↗";
+}
+
+@media (max-width: 700px) {
+  html body { padding-top: 0; }
+  .site-header { position: static; height: auto; }
+  .main-nav,
+  .site-header > .btn { float: none; }
+  .popular { position: static; width: auto; margin-top: 20px; }
+}

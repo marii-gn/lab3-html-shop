@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrendWear — Інтернет-магазин одягу (Лабораторна 3)</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/index.css">
+<style>
+  body { padding-top: 120px; }
+  .accent { color: darkgreen; }
+  
+  /* Допоміжні стилі для блоку демонстрації JS (Лабораторна 3) */
+  .js-demo-section {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f0f7f0;
+    border: 2px dashed darkgreen;
+    border-radius: 8px;
+  }
+  .js-demo-section h2 {
+    color: darkgreen;
+    margin-bottom: 10px;
+  }
+  .js-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  .js-btn {
+    padding: 8px 12px;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+  }
+  .js-btn:hover {
+    background-color: #004d00;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <img class="logo" src="images/logo.png" alt="Логотип TrendWear" width="120" height="60">
+  <h1 class="site-title">TrendWear — інтернет-магазин одягу</h1>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="catalog.html">Каталог</a></li>
+      <li><a href="#reviews">Відгуки про товар</a></li>
+      <li><a href="feedback.html">Зворотній зв'язок</a></li>
+    </ul>
+  </nav>
+
+  <button type="button" class="btn">Перейти у власний кабінет</button>
+  <button type="button" class="btn">Зареєструватись</button>
+</header>
+
+<main class="content">
+
+  <!-- Блок керування та перевірки JS для Лабораторної роботи №3 -->
+  <section class="js-demo-section">
+    <h2>Лабораторна робота №3: Робота з JS</h2>
+    <p>Усі основні результати виконання Завдань 1 та 2 (Варіант 1) виводяться в консоль браузера (<strong>F12 → Console</strong>).</p>
+    <p>Ви можете скористатися кнопками нижче для швидкого виклику функцій під час захисту:</p>
+    
+    <div class="js-controls">
+      <button type="button" class="js-btn" onclick="runTask1()">Запустити Завдання 1 (Товари)</button>
+      <button type="button" class="js-btn" onclick="runTask2()">Запустити Завдання 2 (Користувачі)</button>
+      <button type="button" class="js-btn" onclick="runDemo()">Показати демонстрацію для захисту</button>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>Про нас</h2>
+    <p>
+      Метою створення інтернет-магазину <b>TrendWear</b> є надання користувачам можливості
+      <em>швидко</em> та <i>зручно</i> підібрати <span class="accent">якісний</span> одяг за
+      <u>доступними цінами</u> з доставкою по всій Україні.
+    </p>
+
+    <p>Для досягнення мети магазин виконує наступні завдання:</p>
+    <ol type="i">
+      <li>формування широкого асортименту одягу для різних вікових категорій;</li>
+      <li>забезпечення зручного та швидкого оформлення замовлення;</li>
+      <li>надання детальної інформації про кожен товар (див. <a href="#product-info">таблицю нижче</a>);</li>
+      <li>організація оперативної доставки та якісного сервісу підтримки.</li>
+    </ol>
+  </section>
+
+  <section id="product-info">
+    <h2>Загальна інформація про товар</h2>
+    <table class="info-table">
+      <caption>Категорії товарів інтернет-магазину TrendWear</caption>
+      <thead>
+        <tr>
+          <th>Категорія</th>
+          <th>Матеріал</th>
+          <th>Розмірний ряд</th>
+          <th>Середня ціна</th>
+          <th>Кількість позицій</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">Одяг</td>
+          <td>Бавовна, поліестер</td>
+          <td>XS-XXL</td>
+          <td>450-1200 грн</td>
+          <td>120</td>
+        </tr>
+        <tr>
+          <td>Вовна, деним</td>
+          <td>S-XL</td>
+          <td>800-2000 грн</td>
+          <td>85</td>
+        </tr>
+        <tr>
+          <td rowspan="2">Взуття</td>
+          <td>Шкіра, текстиль</td>
+          <td>36-45</td>
+          <td>900-3000 грн</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td>Замша</td>
+          <td>36-42</td>
+          <td>1200-2500 грн</td>
+          <td>40</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="4">Разом позицій</th>
+          <td>305</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+
+  <article class="featured">
+    <h2>Товар тижня</h2>
+    <p>Пальто з вовняної тканини — теплий та стильний вибір для осіннього сезону.</p>
+    <img class="featured-photo" src="images/coat.png" alt="Пальто вовняне Осінь" width="180" height="220">
+  </article>
+
+  <section id="reviews">
+    <h2>Відгуки про товар</h2>
+    <p class="review">Марина: замовлення прийшло швидко, якість пальто дуже сподобалась.</p>
+    <p class="review">Олег: гарний асортимент взуття, знайшов свій розмір без проблем.</p>
+  </section>
+
+  <aside class="popular">
+    <h2>Популярні категорії</h2>
+    <ul>
+      <li>Верхній одяг</li>
+      <li>Взуття</li>
+      <li>Аксесуари</li>
+    </ul>
+  </aside>
+
+</main>
+
+<footer class="site-footer">
+  <address class="contacts">
+    Адреса: м. Київ, вул. Хрещатик, 22<br>
+    Телефон: +380 44 123 45 67
+  </address>
+  <p class="social">
+    Слідкуйте за нами:
+    <a href="https://www.instagram.com" target="_blank">Instagram</a>,
+    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+  </p>
+  <p>&copy; 2026 TrendWear</p>
+</footer>
+
+<!-- Підключення JavaScript коду Лабораторної роботи №3 -->
+<script src="js/lab3.js"></script>
+
+</body>
+</html>
